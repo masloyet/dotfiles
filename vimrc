@@ -28,10 +28,10 @@ set rnu
 let mapleader=' '
 
 nnoremap <leader>R :au BufWrite *.md :silent !pandoc -o %:r.pdf % &<CR>
-
 nnoremap <leader>f :FZF<CR>
-
-nnoremap <leader>s :new<CR>:call Scratch()<CR>
+nnoremap <silent><leader>v :vs<CR>
+nnoremap <silent><leader>h <c-w>h
+nnoremap <silent><leader>l <c-w>l
 
 
 "-------------------
@@ -55,8 +55,6 @@ Plug 'honza/vim-snippets'
 
 Plug 'kovisoft/slimv'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 call plug#end()
 
 "-------------------
@@ -72,31 +70,3 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-"-------------------
-"------ COC --------
-"-------------------
-
-set updatetime=300
-set signcolumn=yes
-
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-
-
-
-
-
-set background=dark
-colorscheme gruvbox
-
-nnoremap <c-j> :bn<CR>
-nnoremap <c-k> :bp<CR>
-map <c-f> :py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
-imap <c-f> <c-o>:py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
-
-
-au FileType gitcommit setlocal tw=72
-
-
