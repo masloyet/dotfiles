@@ -1,0 +1,22 @@
+export PATH=/Users/masonloyet/flutter/flutter/bin:$PATH
+export PATH=/usr/local/smlnj/bin:"$PATH"
+
+alias smlnj="rlwrap sml"
+alias acl2="rlwrap saved_acl2"
+alias lisp="rlwrap sbcl"
+
+alias ssh="kitty +kitten ssh"
+
+alias fp="cat | gnuplot -e \"plot '<cat'\" -p"
+alias fp1="cat | gnuplot -e \"plot '<cat' using 1\" -p"
+
+alias vim=nvim
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+ZSH_THEME="robbyrussell"
