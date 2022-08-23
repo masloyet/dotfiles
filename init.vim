@@ -26,6 +26,8 @@ nnoremap <c-k> :bp<CR>
 map <c-f> :py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
 imap <c-f> <c-o>:py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
 
+inoremap <c-enter> <c-x><c-o>
+
 "-------------------
 "----- LEADER ------
 "-------------------
