@@ -62,6 +62,9 @@ Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 set background=dark
@@ -82,5 +85,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+"-------------------
+"----- LUA INCL ----
+"-------------------
 
+lua require('treesitter')
 
