@@ -36,6 +36,8 @@ let mapleader=' '
 nnoremap <leader>f :FZF<CR>
 nnoremap <silent><leader>v :vs<CR>
 
+nnoremap <silent><leader>n :noh<CR>
+
 nnoremap <silent><leader>h <c-w>h
 nnoremap <silent><leader>l <c-w>l
 nnoremap <silent><leader>j <c-w>j
@@ -90,4 +92,5 @@ let g:UltiSnipsEditSplit="vertical"
 "-------------------
 
 lua require('treesitter')
+lua require('lsp')
 
