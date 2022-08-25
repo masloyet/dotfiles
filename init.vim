@@ -28,6 +28,8 @@ imap <c-f> <c-o>:py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.p
 
 inoremap <c-enter> <c-x><c-o>
 
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | bo cw | redraw!
+
 "-------------------
 "----- LEADER ------
 "-------------------
@@ -37,6 +39,7 @@ let mapleader=' '
 "nnoremap <leader>R :au BufWrite *.md :silent !pandoc -o %:r.pdf % &<CR>
 nnoremap <leader>f :FZF<CR>
 nnoremap <silent><leader>v :vs<CR>
+nnoremap <silent><leader>g :Ggr <cword><CR>
 
 nnoremap <silent><leader>n :noh<CR>
 
