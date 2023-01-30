@@ -12,21 +12,17 @@ set ruler
 syntax enable 
 
 set expandtab
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 
 set backspace=indent,eol,start
 
 set nu
 
-nnoremap <c-j> :bn<CR>
-nnoremap <c-k> :bp<CR>
-
-map <c-f> :py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
-imap <c-f> <c-o>:py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py<cr>
-
 inoremap <c-enter> <c-x><c-o>
+
+map <silent><c-G> :Git<CR>
 
 command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | bo cw | redraw!
 
@@ -43,15 +39,11 @@ nnoremap <silent><leader>g :Ggr <cword><CR>
 
 nnoremap <silent><leader>n :noh<CR>
 
-nnoremap <silent><leader>h <c-w>h
-nnoremap <silent><leader>l <c-w>l
-nnoremap <silent><leader>j <c-w>j
-nnoremap <silent><leader>k <c-w>k
+nnoremap <silent><leader>= <c-w>=
 
 "-------------------
 "----- VIMPLUG -----
 "-------------------
-
 
 call plug#begin()
 " The default plugin directory will be as follows:
@@ -68,15 +60,22 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
-set background=dark
-colorscheme gruvbox
+"-------------------
+"----- GRUVBOX -----
+"-------------------
 
+set bg=dark
+let g:gruvbox_contrast_dark='medium'
+colorscheme gruvbox
 
 "-------------------
 "----- ULTISNIP ----
@@ -87,7 +86,6 @@ let g:vimtex_quickfix_open_on_warning=0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
