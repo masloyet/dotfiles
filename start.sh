@@ -12,9 +12,11 @@ else
     ln -sf `realpath treesitter.lua` ~/.config/nvim/lua/
 fi
 
+echo "symlinking in .zshrc"
+ln -sf `realpath .zshrc` ~/.zshrc
+
 echo "Installing vimplug"
 source vimplug_nvim.sh
-
 
 echo "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
