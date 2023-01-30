@@ -46,3 +46,23 @@ require('lspconfig')['ccls'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+require('lspconfig')['rust_analyzer'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    settings = {
+      ["rust-analyzer"] = {}
+    }
+}
+
+require('lspconfig')['dartls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    settings = {
+      dart = {
+        completeFunctionCalls = true,
+        showTodos = false
+      }
+    },
+    cmd = { "dart3", "language-server", "--protocol=lsp" }
+}

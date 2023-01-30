@@ -97,3 +97,22 @@ let g:UltiSnipsEditSplit="vertical"
 lua require('treesitter')
 lua require('lsp')
 
+"-------------------
+"-----   RUST   ----
+"-------------------
+
+autocmd FileType rust nnoremap <leader>b :!cargo b<CR>
+autocmd FileType rust nnoremap <leader>t :!cargo t<CR>
+autocmd FileType rust nnoremap <leader>r :!cargo r<CR>
+autocmd FileType rust set softtabstop=2
+autocmd FileType rust set shiftwidth=2
+autocmd FileType rust set tabstop=2
+
+"-------------------
+"-----   DART   ----
+"-------------------
+
+autocmd FileType dart set softtabstop=2
+autocmd FileType dart set shiftwidth=2
+autocmd FileType dart set tabstop=2
+
