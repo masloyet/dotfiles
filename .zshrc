@@ -5,11 +5,11 @@ export ZSH="/Users/masonloyet/.oh-my-zsh"
 export LANG=en_US.UTF-8
 DISABLE_UPDATE_PROMPT="true"
 plugins=(git)
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 ZSH_THEME="robbyrussell"
+source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
