@@ -40,6 +40,15 @@ local lsp_flags = {
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "workspace",
+          useLibraryCodeForTypes = false
+        }
+      }
+    }
 }
 
 require('lspconfig')['ccls'].setup{
