@@ -45,9 +45,8 @@ nnoremap <silent><leader>= <c-w>=
 "----- VIMPLUG -----
 "-------------------
 
+"~/.vim/plugged
 call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
 
 Plug 'morhetz/gruvbox'
 
@@ -87,7 +86,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 "-------------------

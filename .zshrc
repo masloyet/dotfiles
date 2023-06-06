@@ -1,4 +1,3 @@
-
 # zsh stuff.
 
 setopt extendedglob
@@ -19,7 +18,7 @@ export EDITOR='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/Users/masonloyet/flutter/flutter/bin:$PATH"
 export PATH="/usr/local/smlnj/bin:$PATH"
-export PATH="~/bin/:$PATH"
+export PATH="/Users/masonloyet/bin/:$PATH"
 
 # aliases
 
