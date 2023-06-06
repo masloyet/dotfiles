@@ -33,14 +33,19 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | bo cw | redraw!
 
 let mapleader=' '
 
-"nnoremap <leader>R :au BufWrite *.md :silent !pandoc -o %:r.pdf % &<CR>
 nnoremap <leader>f :FZF<CR>
 nnoremap <silent><leader>v :vs<CR>
+nnoremap <silent><leader>up :checkt<CR>
 nnoremap <silent><leader>g :Ggr <cword><CR>
+
+nnoremap <silent><leader>q :wq<CR>
+nnoremap <silent><leader>w :w<CR>
 
 nnoremap <silent><leader>n :noh<CR>
 
 nnoremap <silent><leader>= <c-w>=
+
+nnoremap <silent><leader>py :!python3 %<CR>
 
 "-------------------
 "----- VIMPLUG -----
