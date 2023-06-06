@@ -19,6 +19,7 @@ set tabstop=4
 set backspace=indent,eol,start
 
 set nu
+set rnu
 
 inoremap <c-enter> <c-x><c-o>
 
