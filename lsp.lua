@@ -75,3 +75,8 @@ require('lspconfig')['dartls'].setup{
     },
     cmd = { "dart3", "language-server", "--protocol=lsp" }
 }
+
+require'lspconfig'.gopls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
