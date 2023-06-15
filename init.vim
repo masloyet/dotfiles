@@ -46,6 +46,7 @@ nnoremap <silent><leader>n :noh<CR>
 nnoremap <silent><leader>= <c-w>=
 
 nnoremap <silent><leader>py :!python3 %<CR>
+nnoremap <silent><leader>F :%!fmt -70<CR>
 
 "-------------------
 "----- VIMPLUG -----
