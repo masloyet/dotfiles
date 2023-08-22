@@ -23,6 +23,6 @@ alias gap='git add --patch'
 # fzf history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if type rg &> /dev/null; then
+if command -v rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
