@@ -118,3 +118,9 @@ autocmd FileType dart set softtabstop=2
 autocmd FileType dart set shiftwidth=2
 autocmd FileType dart set tabstop=2
 
+"-------------------
+"-----   YACC   ----
+"-------------------
+
+let g:yacc_uses_cpp=1
+
