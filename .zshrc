@@ -8,7 +8,7 @@ export ZSH="<home>/.oh-my-zsh"
 export LANG=en_US.UTF-8
 DISABLE_UPDATE_PROMPT="true"
 plugins=(git)
-ZSH_THEME="robbyrussell"
+ZSH_THEME="my-robby"
 source $ZSH/oh-my-zsh.sh
 
 # environment vars
