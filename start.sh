@@ -34,11 +34,11 @@ echo ""
 
 if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-    ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
 else
     echo "omz already installed."
 fi
 
+ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
 cp -v $root/.zshrc ~
 sed -i '' -e "s:home:$HOME:" ~/.zshrc
 
