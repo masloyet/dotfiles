@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 root="$(cd "$(dirname $0)" && pwd -P)"
 user=$(whoami)
@@ -30,10 +32,15 @@ echo "zsh"
 echo "##############################"
 echo ""
 
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+    ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
+else
+    echo "omz already installed."
+fi
+
 cp -v $root/.zshrc ~
-sed -i "s#<home>#$HOME#" ~/.zshrc
-ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
+sed -i '' -e "s:home:$HOME:" ~/.zshrc
 
 echo ""
 echo "##############################"
@@ -60,8 +67,13 @@ echo "fzf"
 echo "##############################"
 echo ""
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+else
+    echo "FZF already installed."
+fi
+
 
 echo ""
 echo "##############################"

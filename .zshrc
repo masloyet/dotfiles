@@ -4,7 +4,7 @@ setopt extendedglob
 
 # oh-my-zsh stuff.
 
-export ZSH="<home>/.oh-my-zsh"
+export ZSH="home/.oh-my-zsh"
 export LANG=en_US.UTF-8
 DISABLE_UPDATE_PROMPT="true"
 plugins=(git)
