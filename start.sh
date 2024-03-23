@@ -34,9 +34,6 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 cp -v $root/.zshrc ~
 sed -i "s#<home>#$HOME#" ~/.zshrc
 ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
-# Copy here as .zshrc tends to have host-specific modifications.
-echo "Changing default shell..."
-chsh -s $(which zsh)
 
 echo ""
 echo "##############################"
