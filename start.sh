@@ -3,7 +3,6 @@
 set -e
 
 root="$(cd "$(dirname $0)" && pwd -P)"
-user=$(whoami)
 
 # Check dependencies.
 errs=0
@@ -48,10 +47,10 @@ echo "Neovim"
 echo "##############################"
 echo ""
 
-mkdir -pv ~/.config/nvim/lua/
-ln -sfv $root/init.vim ~/.config/nvim/
-ln -sfv $root/lsp.lua ~/.config/nvim/lua/
-ln -sfv $root/treesitter.lua ~/.config/nvim/lua/
+mkdir -pv               ~/.config/nvim/
+ln -sfv $root/init.vim  ~/.config/nvim/
+ln -sfv $root/lua       ~/.config/nvim/
+ln -sfv $root/ftplugin  ~/.config/nvim/
 
 echo ""
 echo "##############################"
@@ -59,7 +58,8 @@ echo "vimplug"
 echo "##############################"
 echo ""
 
-. $root/vimplug_nvim.sh
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo ""
 echo "##############################"
@@ -73,6 +73,7 @@ if [ ! -d ~/.fzf ]; then
 else
     echo "FZF already installed."
 fi
+ln -sfv $root/.ignore ~
 
 
 echo ""
@@ -81,7 +82,8 @@ echo "gdb"
 echo "##############################"
 echo ""
 
-ln -sfv $root/.gdbinit ~
+mkdir -pv               ~/.config/gdb/
+ln -sfv $root/gdbinit   ~/.config/gdb/
 
 echo ""
 echo "##############################"
@@ -89,8 +91,20 @@ echo "tmux"
 echo "##############################"
 echo ""
 
-ln -sfv $root/.tmux.conf ~
+mkdir -pv               ~/.config/tmux/
+ln -sfv $root/tmux.conf ~/.config/tmux/
 
 echo ""
-echo "Done!"
+echo "##############################"
+echo "python"
+echo "##############################"
 echo ""
+
+pip3 install --user python-lsp-server
+pip3 install --user pylsp-mypy
+pip3 install --user neovim
+
+echo ""
+echo "%%%%%"
+echo "Done!"
+echo "%%%%%"

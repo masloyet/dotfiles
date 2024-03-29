@@ -16,14 +16,16 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 
+set clipboard+=unnamedplus
+
 set backspace=indent,eol,start
+
+set completeopt-=preview
+
+set jumpoptions=stack
 
 set nu
 set rnu
-
-inoremap <c-enter> <c-x><c-o>
-
-map <silent><c-G> :Git<CR>
 
 command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | bo cw | redraw!
 
@@ -32,27 +34,23 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | bo cw | redraw!
 "-------------------
 
 let mapleader=' '
+let maplocalleader='\'
 
-nnoremap <leader>f :FZF<CR>
-nnoremap <silent><leader>v :vs<CR>
+nnoremap <silent><leader>f :FZF<CR>
 nnoremap <silent><leader>up :checkt<CR>
-nnoremap <silent><leader>g :Ggr <cword><CR>
-
-nnoremap <silent><leader>q :wq<CR>
-nnoremap <silent><leader>w :w<CR>
-
 nnoremap <silent><leader>n :noh<CR>
 
-nnoremap <silent><leader>= <c-w>=
-
-nnoremap <silent><leader>py :!python3 %<CR>
-nnoremap <silent><leader>F :%!fmt -70<CR>
+nnoremap <leader>v :vs<CR>
+nnoremap <leader>= <c-w>=
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 "-------------------
 "----- VIMPLUG -----
 "-------------------
 
-"~/.vim/plugged
 call plug#begin()
 
 Plug 'morhetz/gruvbox'
@@ -60,18 +58,11 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'lervag/vimtex'
-
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -84,43 +75,7 @@ let g:gruvbox_contrast_dark='medium'
 colorscheme gruvbox
 
 "-------------------
-"----- ULTISNIP ----
-"-------------------
-
-let g:vimtex_quickfix_open_on_warning=0
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:UltiSnipsEditSplit="vertical"
-
-"-------------------
 "----- LUA INCL ----
 "-------------------
 
-lua require('treesitter')
 lua require('lsp')
-
-"-------------------
-"-----   RUST   ----
-"-------------------
-
-autocmd FileType rust nnoremap <leader>b :!cargo b<CR>
-autocmd FileType rust nnoremap <leader>t :!cargo t<CR>
-autocmd FileType rust nnoremap <leader>r :!cargo r<CR>
-
-"-------------------
-"-----   DART   ----
-"-------------------
-
-autocmd FileType dart set softtabstop=2
-autocmd FileType dart set shiftwidth=2
-autocmd FileType dart set tabstop=2
-
-"-------------------
-"-----   YACC   ----
-"-------------------
-
-let g:yacc_uses_cpp=1
-

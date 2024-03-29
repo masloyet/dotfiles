@@ -19,10 +19,9 @@ export EDITOR='nvim'
 
 alias vim=nvim
 alias gap='git add --patch'
+alias ls='ls --color=auto'
 
 # fzf history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if command -v rg &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden'
-fi
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
