@@ -39,7 +39,7 @@ fi
 
 ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
 cp -v $root/.zshrc ~
-sed -i '' -e "s:home:$HOME:" ~/.zshrc
+sed -i '' -e "s/home/$HOME/" ~/.zshrc
 
 echo ""
 echo "##############################"

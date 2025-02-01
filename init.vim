@@ -58,9 +58,6 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 
