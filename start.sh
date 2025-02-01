@@ -52,6 +52,8 @@ ln -sfv $root/init.vim  ~/.config/nvim/
 ln -sfv $root/lua       ~/.config/nvim/
 ln -sfv $root/ftplugin  ~/.config/nvim/
 
+nvim +PlugInstall +qall
+
 echo ""
 echo "##############################"
 echo "vimplug"
@@ -93,16 +95,6 @@ echo ""
 
 mkdir -pv               ~/.config/tmux/
 ln -sfv $root/tmux.conf ~/.config/tmux/
-
-echo ""
-echo "##############################"
-echo "python"
-echo "##############################"
-echo ""
-
-pip3 install --user python-lsp-server
-pip3 install --user pylsp-mypy
-pip3 install --user neovim
 
 echo ""
 echo "%%%%%"

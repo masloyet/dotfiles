@@ -61,6 +61,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 "-------------------
