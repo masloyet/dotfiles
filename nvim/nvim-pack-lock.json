@@ -1,0 +1,32 @@
+{
+  "plugins": {
+    "fzf.vim": {
+      "rev": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263",
+      "src": "https://github.com/junegunn/fzf.vim"
+    },
+    "gruvbox-material": {
+      "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
+      "src": "https://github.com/sainnhe/gruvbox-material"
+    },
+    "nvim-lspconfig": {
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "vim-commentary": {
+      "rev": "64a654ef4a20db1727938338310209b6a63f60c9",
+      "src": "https://github.com/tpope/vim-commentary"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-tmux-navigator": {
+      "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    }
+  }
+}
