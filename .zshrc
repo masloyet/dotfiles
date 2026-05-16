@@ -25,3 +25,8 @@ alias ls='ls --color=auto'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+if [[ -n "$SSH_CONNECTION" && -z "$TMUX" ]]; then
+  tmux attach
+  exit
+fi

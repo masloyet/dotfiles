@@ -35,7 +35,7 @@ else
 fi
 
 ln -sfv $root/my-robby.zsh-theme ~/.oh-my-zsh/themes/
-cp -v $root/.zshrc ~
+ln -sfv $root/.zshrc ~
 
 echo ""
 echo "##############################"
@@ -75,6 +75,16 @@ echo "##############################"
 echo ""
 
 ln -sfv $root/tmux ~/.config/
+
+echo ""
+echo "##############################"
+echo "systemd"
+echo "##############################"
+echo ""
+
+ln -sfv $root/systemd ~/.config/
+systemctl --user enable --now tmux.service
+loginctl enable-linger $USER
 
 echo ""
 echo "%%%%%"
