@@ -19,6 +19,12 @@ vim.opt.exrc = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.health.provider_disabled = function() return true end
+
 vim.keymap.set('n', '<leader>f', ':FZF<CR>', { silent = true })
 vim.keymap.set('n', '<leader>up', ':checkt<CR>', { silent = true })
 vim.keymap.set('n', '<leader>n', ':noh<CR>', { silent = true })
@@ -48,6 +54,24 @@ vim.pack.add({
 
 vim.cmd('colorscheme gruvbox-material')
 
-require('nvim-treesitter.install').install({ 'lua', 'c', 'cpp', 'python', 'rust' })
+local treesitter_languqges = { 'lua', 'c', 'cpp', 'python', 'rust' }
+require('nvim-treesitter.install').install(treesitter_languqges)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = treesitter_languqges,
+  callback = function() vim.treesitter.start() end,
+})
 
-require('lsp')
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        local bufopts = { noremap = true, silent = true, buffer = args.buf }
+
+        vim.keymap.set('n', 'gd',           vim.lsp.buf.definition,                                     bufopts)
+        vim.keymap.set('n', 'gr',           vim.lsp.buf.references,                                     bufopts)
+        vim.keymap.set('n', '<leader>rn',   vim.lsp.buf.rename,                                         bufopts)
+        vim.keymap.set('n', '<leader>e',    vim.diagnostic.open_float,                                  bufopts)
+        vim.keymap.set('n', ']d',           function() vim.diagnostic.jump { count =  1 } end,          bufopts)
+        vim.keymap.set('n', '[d',           function() vim.diagnostic.jump { count = -1 } end,          bufopts)
+        vim.keymap.set('n', '<leader>ca',   function() vim.lsp.buf.code_action { apply = true } end,    bufopts)
+        vim.keymap.set('n', '<leader>F',    function() vim.lsp.buf.format { async = true } end,         bufopts)
+    end,
+})
